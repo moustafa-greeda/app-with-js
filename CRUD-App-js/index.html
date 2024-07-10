@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App with js</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- link Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h2>product system</h2>
+            <p>create product system with CRUD js</p>
+        </header>
+        <div id="main-inputs">
+            <input type="text" name="title" id="title" placeholder="Enter title">
+            <div id="box-price">
+                <input type="number" onkeyup="getTotal()" name="price" id="price" placeholder="Enter price">
+                <input type="number" onkeyup="getTotal()" name="taxe" id="taxe" placeholder="Enter taxes">
+                <input type="number" onkeyup="getTotal()" name="ads" id="ads" placeholder="Enter ads">
+                <input type="number" onkeyup="getTotal()" name="discount" id="discount" placeholder="Enter discount">
+
+                <small id="total"></small>
+            </div>
+            <input type="text" name="count" id="count" placeholder="Ente count of product to repeat">
+            <input type="text" name="category" id="category" placeholder="Enter category">
+            <button type="submit" id="add_product">create</button>
+            <div class="search-area">
+                <input type="text" onkeyup="searchProduct(this.value)" name="search" id="search"
+                    placeholder="Search in products">
+                <div id="box-search">
+                    <button type="button" onclick="getSearchMod(this.id)" id="search-title">Search With Title</button>
+                    <button type="button" onclick="getSearchMod(this.id)" id="search-category">Search With Category
+                        Name</button>
+                </div>
+            </div>
+            <div id="delete-all"></div>
+            <!----------------------------- table ------------------------------>
+            <div class="output">
+                <table id="table-products">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Taxes</th>
+                            <th>Ads</th>
+                            <th>Discount</th>
+                            <th>Total</th>
+                            <th>Category</th>
+                            <th colspan="2">Process</th>
+                            <!-- <th>Delete</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="table_Body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
